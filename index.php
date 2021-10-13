@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +16,24 @@
     <section>
         <h2>Inscrição de novos competidores</h2>
         <form action="script.php" method="post">
+            <?php
+                $mensagemErro = isset($_SESSION['mensagemErro']) ? $_SESSION['mensagemErro'] : '';
+                if(!empty($mensagemErro))
+                {
+                    echo '<div class="alert alert-danger text-center mb-3">'.$mensagemErro.'</div>';
+                }
+
+                $mensagemSucesso = isset($_SESSION['mensagemSucesso']) ? $_SESSION['mensagemSucesso'] : '';
+                if(!empty($mensagemSucesso))
+                {
+                    echo '<div class="alert alert-success text-center mb-3">'.$mensagemSucesso.'</div>';
+                }
+            ?>
             <label for="nome" class="sr-only">Seu nome:</label>
             <input type="text" class="form-control mb-4" name="nome" class="nome" placeholder="Nome">
-            <small></small>
 
             <label for="idade" class="sr-only">Sua idade:</label>
             <input type="text" class="form-control mb-4" name="idade" class="idade" placeholder="Idade">
-            <small></small>
 
             <button type="submit" class="btn btn-primary">Enviar dados</button>
         </form>
