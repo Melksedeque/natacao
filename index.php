@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include "servicos/mensagemSessao.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +17,13 @@
         <h2>Inscrição de novos competidores</h2>
         <form action="script.php" method="post">
             <?php
-                $mensagemErro = isset($_SESSION['mensagemErro']) ? $_SESSION['mensagemErro'] : '';
+                $mensagemErro = getMensagemErro();
                 if(!empty($mensagemErro))
                 {
                     echo '<div class="alert alert-danger text-center mb-3">'.$mensagemErro.'</div>';
                 }
 
-                $mensagemSucesso = isset($_SESSION['mensagemSucesso']) ? $_SESSION['mensagemSucesso'] : '';
+                $mensagemSucesso = getMensagemSucesso();
                 if(!empty($mensagemSucesso))
                 {
                     echo '<div class="alert alert-success text-center mb-3">'.$mensagemSucesso.'</div>';
