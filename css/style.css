@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: transparent url(../img/bg_natacao.jpg) center center no-repeat;
+    font-family: "Roboto";
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+
+section {
+    background: white;
+    box-shadow: 0 0 5px;
+    height: auto;
+    left: 50%;
+    padding: 30px 50px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
